@@ -42,10 +42,6 @@ FROM cbo_vacant_paid_due
 WHERE entity LIKE '%bank_of_america%' AND issued_date >= '2017/01/01' 
 ORDER BY total_boa_homes DESC;
 
-/* showing the percent of homes that are distinct & then averaging them out to signify 
-the average percentage of individual vacant homes for that bank.*/
-
-
 SELECT entity, COUNT(property_address)
 OVER(ORDER BY entity
 ) AS total_us_bank_homes
@@ -80,6 +76,9 @@ OVER(ORDER BY entity
 FROM cbo_vacant_paid_due
 WHERE entity LIKE '%citi %' AND issued_date >= '2017/01/01' 
 ORDER BY total_citi_bank_homes DESC;
+
+/* My analysis shows that there are more 1185 bank owned vacant properties between six banks in Chicago. 
+Futher analysis and data visualization is covered in Tableau*/
 
 
 
